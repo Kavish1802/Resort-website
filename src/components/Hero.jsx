@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
-
+import videobg from "../assets/video.mp4";
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
 
 const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
+    <video autoPlay loop muted playsInline style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', minWidth: '100%', minHeight: '100%' }}>
+      <source src={videobg} type="video/mp4" />
+    </video>
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -24,8 +26,6 @@ const Hero = () => {
           </p>
         </div>
       </div>
-
-      <ComputersCanvas />
 
       <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
         <a href='#about'>
