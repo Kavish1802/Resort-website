@@ -1,8 +1,4 @@
 import {
-  mobile,
-  backend,
-  creator,
-  web,
   javascript,
   typescript,
   html,
@@ -24,6 +20,12 @@ import {
   tripguide,
   threejs,
 } from "../assets";
+import campfiremusic from "../assets/campfriemusic.png";
+import archery from "../assets/archery.png";
+import food from "../assets/food.png";
+import trekking from "../assets/trekking.png";
+import Icon from "../assets/company/Icon.png";
+console.log(campfiremusic);
 
 export const navLinks = [
   {
@@ -42,20 +44,20 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
-    icon: web,
+    title: "Trekking",
+    image: trekking,
   },
   {
-    title: "React Native Developer",
-    icon: mobile,
+    title: "Archery",
+    image: archery,
   },
   {
-    title: "Backend Developer",
-    icon: backend,
+    title: "Food",
+    image: food,
   },
   {
-    title: "Content Creator",
-    icon: creator,
+    title: "Campfire & Music",
+    image: campfiremusic,
   },
 ];
 
@@ -116,8 +118,7 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
+    title: "Cabbana Cottages",
     icon: starbucks,
     iconBg: "#383E56",
     date: "March 2020 - April 2021",
@@ -129,7 +130,7 @@ const experiences = [
     ],
   },
   {
-    title: "React Native Developer",
+    title: "Glamping Nests",
     company_name: "Tesla",
     icon: tesla,
     iconBg: "#E6DEDD",
@@ -142,7 +143,7 @@ const experiences = [
     ],
   },
   {
-    title: "Web Developer",
+    title: "Stingray stacks",
     company_name: "Shopify",
     icon: shopify,
     iconBg: "#383E56",
@@ -172,26 +173,26 @@ const experiences = [
 const testimonials = [
   {
     testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
+      "The glamping Groove on the banks of the Choral River near Indore, MP, is a delightful experience. The natural beauty, luxurious accommodation, and friendly staff made my stay perfect. Highly recommended!.",
+    name: "Priya Sharma",
+    designation: "Indore , ",
+    company: "Madhya Pradesh",
     image: "https://randomuser.me/api/portraits/women/4.jpg",
   },
   {
     testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
+      "The glamping resort near Indore exceeded my expectations. The beautiful surroundings, well-designed tents, and welcoming staff provided a peaceful and revitalizing experience. Highly recommended!",
+    name: "Kavish Gupta",
+    designation: "Indore ,",
+    company: "Madhya Pradesh",
     image: "https://randomuser.me/api/portraits/men/5.jpg",
   },
   {
     testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
+    "We had a fantastic time at the glamping resort near Indore. The serene location, top-notch accommodation, and hospitable staff made it an ideal retreat for the whole family. Highly recommended!",
+    name: "Rajesh Patel",
+    designation: "Bhopal , ",
+    company: " Madhya Pradesh",
     image: "https://randomuser.me/api/portraits/women/6.jpg",
   },
 ];

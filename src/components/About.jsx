@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 
@@ -7,7 +7,7 @@ import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ServiceCard = ({ index, title, icon }) => (
+const ServiceCard = ({ index, title, image }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
@@ -19,12 +19,13 @@ const ServiceCard = ({ index, title, icon }) => (
           scale: 1,
           speed: 450,
         }}
-        className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
+        className='bg-tertiary rounded-[20px] py-2 px-2 min-h-[280px] flex justify-evenly items-center flex-col'
       >
+      
         <img
-          src={icon}
+          src={image}
           alt='web-development'
-          className='w-16 h-16 object-contain'
+          className="w-100% h-100% display: block; margin-left: auto; margin-right: auto;"
         />
 
         <h3 className='text-white text-[20px] font-bold text-center'>

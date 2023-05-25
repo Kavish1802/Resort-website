@@ -5,12 +5,11 @@ import { styles } from "../styles";
 const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
-    //video background
     <video autoPlay loop muted playsInline style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', minWidth: '100%', minHeight: '100%' }}>
       <source src={videobg} type="video/mp4" />
     </video>
 
-    
+
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
@@ -24,7 +23,7 @@ const Hero = () => {
           <span className='text-[#964B00]'>The Glamping Groove</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Groove int the wild
+            Groove in the wild
           </p>
         </div>
       </div>
