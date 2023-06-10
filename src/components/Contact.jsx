@@ -1,26 +1,27 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
-
+import Logo from "../assets/WhatsAppLogo.png"
+import DatePicker from 'react-datepicker'
+import "react-datepicker/dist/react-datepicker.css"
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 
+
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
-    email: "",
-    message: "",
+    cottage:false,
+    starttDate:new Date(),
+    enddDate:new Date(),
+    glamp:false,
+    contact:"",
   });
-
-  const [loading, setLoading] = useState(false);
-
   const handleChange = (e) => {
     const { target } = e;
     const { name, value } = target;
-
     setForm({
       ...form,
       [name]: value,
@@ -28,40 +29,12 @@ const Contact = () => {
   };
 
   const handleSubmit = (e) => {
+    //send message on whatsapp
     e.preventDefault();
-    setLoading(true);
-
-    emailjs
-      .send(
-        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "JavaScript Mastery",
-          from_email: form.email,
-          to_email: "sujata@jsmastery.pro",
-          message: form.message,
-        },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
+    const { name, contact,cottage,starttDate,enddDate,glamp } = form;
+    const message = `Hi, I'm ${name} and I wanted to book a ${cottage?"cottage":" "} ${glamp?"glamping nest":""}. From the date ${starttDate} to ${enddDate}. Please contact me at ${contact}`;
+    const url = `https://api.whatsapp.com/send?phone=+919713877798&text=${message}`;
+    window.open(url, "_blank");
   };
 
   return (
@@ -72,8 +45,8 @@ const Contact = () => {
         variants={slideIn("left", "tween", 0.2, 1)}
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <p className={styles.sectionSubText}>Chat on WhatsApp for Bookings</p>
+        <h3 className={styles.sectionSubHeadText}>Contact for Bookings</h3>
 
         <form
           ref={formRef}
@@ -92,33 +65,76 @@ const Contact = () => {
             />
           </label>
           <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your email</span>
+            <span className='text-white font-medium mb-4'>Your Contact Number</span>
             <input
-              type='email'
-              name='email'
-              value={form.email}
+              type='contact'
+              name='contact'
+              value={form.contact}
               onChange={handleChange}
-              placeholder="What's your web address?"
-              className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
-            />
-          </label>
-          <label className='flex flex-col'>
-            <span className='text-white font-medium mb-4'>Your Message</span>
-            <textarea
-              rows={7}
-              name='message'
-              value={form.message}
-              onChange={handleChange}
-              placeholder='What you want to say?'
+              placeholder="What's your Contact number?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
 
+
+         <label className='flex flex-col'>
+
+            <span className='text-white font-medium mb-4'>Select the type of Stay</span>
+            <div className='flex items-center gap-4'>
+              <input
+                type='checkbox'
+                name='cottage'
+                value={form.cottage}
+                onChange={handleChange}
+                className='h-6 w-6 rounded-lg border-none outline-none'
+              />
+              <span className='text-white font-medium'>
+                Book a cottage
+              </span>
+            </div>
+            <span className='text-white font-small py-2'>OR</span>
+            <div className='flex items-center gap-4'>
+              <input
+                type='checkbox'
+                name='glamp'
+                value={form.glamp}
+                onChange={handleChange}
+                className='h-6 w-6 rounded-lg border-none outline-none'
+              />
+              <span className='text-white font-medium'>
+                Book a glamping Nest
+              </span>
+            </div>
+         </label>
+
+          <label className='flex flex-col'>
+             <span className='text-white font-medium mb-4'>Select Date with another method</span>
+              <div className="flex flex-row gap-4">
+                <input
+                  type='date'
+                  name='starttDate'
+                  value={form.starttDate}
+                  onChange={handleChange}
+                  placeholder="Start Date"
+                  className='bg-tertiary py-4 px-5 placeholder:text-secondary text-white rounded-lg outline-none border-none '
+                />
+                <input
+                  type='date'
+                  name='enddDate'
+                  value={form.enddDate}
+                  onChange={handleChange}
+                  placeholder="End Date"
+                  className='bg-tertiary py-4 px-5 placeholder:text-secondary text-white rounded-lg outline-none border-none'
+                />
+              </div>
+          </label>
+
+
           <button
             type='submit'
-            className='bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary'
+            className='bg-tertiary py-3 px-5 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary grid -cols-1 sm:grid-cols-2 gap-2'
           >
-            {loading ? "Sending..." : "Send"}
+            Send Message <img src={Logo} alt="logo" className="w-6 h-6 ml-2"/>
           </button>
         </form>
       </motion.div>
@@ -134,3 +150,5 @@ const Contact = () => {
 };
 
 export default SectionWrapper(Contact, "contact");
+
+// grid -cols-1 sm:grid-cols-2 gap-14 max-w-screen-lg

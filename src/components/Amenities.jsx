@@ -1,7 +1,7 @@
 import React from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
-
+import WhatsAppButtonGreenSmall from "../assets/WhatsAppButtonGreenSmall.png";
 import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
@@ -71,8 +71,8 @@ const Amenities = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
+        <p className={`${styles.sectionSubText} `}></p>
+        <h2 className={`${styles.sectionHeadText}`}>Our services</h2>
       </motion.div>
 
       <div className='w-full flex'>
@@ -80,6 +80,9 @@ const Amenities = () => {
           variants={fadeIn("", "", 0.1, 1)}
           className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
         >
+          Some basic description about the services we provide:
+          (this is dummy data)
+          
           Following projects showcases my skills and experience through
           real-world examples of my work. Each project is briefly described with
           links to code repositories and live demos in it. It reflects my
@@ -87,11 +90,13 @@ const Amenities = () => {
           and manage projects effectively.
         </motion.p>
       </div>
-
-      <div className='mt-20 flex flex-wrap gap-7'>
-        {projects.map((project, index) => (
+      <a href="https://wa.me/918889918884" target="_blank">
+        <img src={WhatsAppButtonGreenSmall}/>
+      </a>
+      <div className='w-max mt-20 flex flex-wrap gap-7'>
+        {/* {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
+        ))} */}
       </div>
     </>
   );

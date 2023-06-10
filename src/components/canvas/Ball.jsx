@@ -37,9 +37,10 @@ const Ball = (props) => {
   );
 };
 
-const BallCanvas = ({ icon }) => {
+const BallCanvas = ({ icon, desc }) => {
   return (
-    <Canvas
+    <div>
+      <Canvas
       frameloop='demand'
       dpr={[1, 2]}
       gl={{ preserveDrawingBuffer: true }}
@@ -48,9 +49,11 @@ const BallCanvas = ({ icon }) => {
         <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} />
       </Suspense>
-
+      
       <Preload all />
     </Canvas>
+    <p className='justify-center flex'>{desc}</p>
+    </div>
   );
 };
 

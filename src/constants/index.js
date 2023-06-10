@@ -1,7 +1,6 @@
 import {
   javascript,
   typescript,
-  html,
   css,
   reactjs,
   redux,
@@ -20,11 +19,19 @@ import {
   tripguide,
   threejs,
 } from "../assets";
+import trust from "../assets/tech/trust.png";
+import camp  from "../assets/tech/camp.png";
+import resort from "../assets/tech/resort.png";
+import safety from "../assets/tech/safety.png";
+import verified from "../assets/tech/verified.png";
+import riverside from "../assets/tech/ganga-river.png";
 import campfiremusic from "../assets/campfriemusic.png";
 import archery from "../assets/archery.png";
 import food from "../assets/food.png";
 import trekking from "../assets/trekking.png";
 import Icon from "../assets/company/Icon.png";
+import cabbana from "../assets/cabbana.png";
+import stingray from "../assets/stingraystacks.png";
 console.log(campfiremusic);
 
 export const navLinks = [
@@ -63,109 +70,66 @@ const services = [
 
 const technologies = [
   {
-    name: "HTML 5",
-    icon: html,
+    name: "html",
+    icon: trust,
+    desc:"Trust"
   },
   {
     name: "CSS 3",
-    icon: css,
+    icon: camp,
+    desc:"Camping"
   },
   {
     name: "JavaScript",
-    icon: javascript,
+    icon: resort,
+    desc:"Resort"
   },
   {
     name: "TypeScript",
-    icon: typescript,
+    icon: safety,
+    desc:"Safety"
   },
   {
     name: "React JS",
-    icon: reactjs,
+    icon: verified,
+    desc:"Verified"
   },
   {
     name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
+    icon: riverside,
+    desc:"Riverside"
   },
 ];
 
 const experiences = [
   {
     title: "Cabbana Cottages",
-    icon: starbucks,
+    icon: cabbana,
     iconBg: "#383E56",
+    image:cabbana,
     date: "March 2020 - April 2021",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "1-2 lines decription here"
     ],
   },
   {
     title: "Glamping Nests",
-    company_name: "Tesla",
     icon: tesla,
-    iconBg: "#E6DEDD",
+    image:cabbana,
+    iconBg:  "#383E56",
     date: "Jan 2021 - Feb 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+     "1-2 lines decription here"
     ],
   },
   {
-    title: "Stingray stacks",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
+    title: "Stingray Stacks",
     icon: meta,
     iconBg: "#E6DEDD",
+    image:stingray,
     date: "Jan 2023 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "1-2 lines decription here"
     ],
   },
 ];
@@ -238,27 +202,6 @@ const projects = [
       },
     ],
     image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
     source_code_link: "https://github.com/",
   },
 ];

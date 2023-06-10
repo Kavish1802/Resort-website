@@ -1,12 +1,11 @@
  import React from "react";
 import Tilt from "react-tilt";
 import { motion } from "framer-motion";
-
 import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-
+// import {Carousel} from "./Carousel.jsx";
 const ServiceCard = ({ index, title, image }) => (
   <Tilt className='xs:w-[250px] w-full'>
     <motion.div
@@ -28,7 +27,7 @@ const ServiceCard = ({ index, title, image }) => (
           className="w-100% h-100% display: block; margin-left: auto; margin-right: auto;"
         />
 
-        <h3 className='text-white text-[20px] font-bold text-center'>
+        <h3 className='text-white text-[25px] font-bold text-center'>
           {title}
         </h3>
       </div>

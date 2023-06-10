@@ -5,7 +5,7 @@ import { styles } from "../styles";
 const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
-    <video autoPlay loop muted playsInline style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', minWidth: '100%', minHeight: '100%' }}>
+    <video autoPlay loop muted playsInline style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', minWidth: '100%', minHeight: '10%' }}>
       <source src={videobg} type="video/mp4" />
     </video>
 
