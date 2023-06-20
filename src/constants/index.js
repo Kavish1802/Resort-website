@@ -48,7 +48,6 @@ export const navLinks = [
     title: "Contact",
   },
 ];
-
 const services = [
   {
     title: "Trekking",
@@ -101,10 +100,9 @@ const technologies = [
   },
 ];
 
-const experiences = [
+const StayTypes = [
   {
     title: "Cabbana Cottages",
-    icon: cabbana,
     iconBg: "#383E56",
     image:cabbana,
     date: "March 2020 - April 2021",
@@ -114,24 +112,13 @@ const experiences = [
   },
   {
     title: "Glamping Nests",
-    icon: tesla,
-    image:cabbana,
+    image:stingray,
     iconBg:  "#383E56",
-    date: "Jan 2021 - Feb 2022",
     points: [
      "1-2 lines decription here"
     ],
   },
-  {
-    title: "Stingray Stacks",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    image:stingray,
-    date: "Jan 2023 - Present",
-    points: [
-      "1-2 lines decription here"
-    ],
-  },
+   // used in carousel in amenities
 ];
 
 const testimonials = [
@@ -206,4 +193,4 @@ const projects = [
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export { services, technologies, StayTypes, testimonials, projects };

@@ -1,62 +1,53 @@
 import React from "react";
+import leftArrow from "../assets/leftArrow.png";
+import rightArrowVid from "../assets/right-arrow.mp4";
+import rightArrow from "../assets/rightArrow.png";
 import { motion } from "framer-motion";
-
 import "react-vertical-timeline-component/style.min.css";
-
 import { styles } from "../styles";
-import Tilt from "react-tilt";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
-import cottage from "../assets/cabbana.png"
-import glamp from "../assets/stingraystacks.png"
+import { useState } from "react";
+import { StarsCanvas } from "./canvas";
+import { StayTypes } from "../constants";
 
-
-// const ExperienceCard = ({ experience }) => {
-//   return (
-//     <VerticalTimelineElement
-//       contentStyle={{
-//         background: "#1d1836",
-//         color: "#fff",
-//       }}
-//       contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-//       date="1-2 word tagline here"
-//       iconStyle={{ background: experience.iconBg }}
-//       icon={
-//         <div className='flex justify-center items-center w-full h-full'>
-//           <img
-//             src={experience.icon}
-//             alt={experience.company_name}
-//             className='w-[60%] h-[60%] object-contain'
-//           />
-//         </div>
-//       }
-//     >
-//       <div>
-//         <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
-//         <p
-//           className='text-secondary text-[16px] font-semibold'
-//           style={{ margin: 0 }}
-//         >
-//           {experience.company_name}
-//            <img src={experience.image} alt={experience.company_name} className="w-full flex"/> 
-//         </p>
-//       </div>
-
-//       <ul className='mt-5 list-disc ml-5 space-y-2'>
-//         {experience.points.map((point, index) => (
-//           <li
-//             key={`experience-point-${index}`}
-//             className='text-white-100 text-[14px] pl-1 tracking-wider'
-//           >
-//             {point}
-//           </li>
-//         ))}
-//       </ul>
-//     </VerticalTimelineElement>
-//   );
-// };
 
 const Experience = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const gotonext = () => {
+    if(currentIndex < StayTypes.length - 1){
+      setCurrentIndex(currentIndex + 1);
+    }
+    else {
+      setCurrentIndex(0);
+    }
+
+  }
+  const gotoprev = () => {
+    if(currentIndex > 0){
+      setCurrentIndex(currentIndex - 1);
+    }
+    else 
+    {
+      setCurrentIndex(StayTypes.length - 1);
+    }
+
+  }
+  const carousel = (data) => {
+    return (
+      <div className="flex flex-auto justify-center items-center mt-17 ">
+         <div >
+          <img src={data.image} style={{height:"20rem", width:"20rem" ,left:"rem" , marginTop:"30px"}}/>
+        </div>
+              <h1 className={`${styles.sectionSubHeadText} text-center`}>
+                {data.title}
+              </h1>
+              <p className={`${styles.sectionSubText} text-center`}>
+                {data.points}
+              </p>
+      </div>
+    )};
+     
   return (
     <>
       <motion.div variants={textVariant()}>
@@ -70,44 +61,34 @@ const Experience = () => {
 
 
      <div className="flex justify-center">
-
-       <div className="grid -cols-1 sm:grid-cols-2 gap-14 max-w-screen-lg">
-        <div className="borde">
-          <img src={cottage} style={{height:"30rem", width:"30rem", marginTop:"5rem"}}/>
-            <h2 className="text-4xl text-center text-white mt-5">Cabbana Cottage</h2>
-            <ul className='mt-5 list-disc ml-5 space-y-2'>
-            <li className='text-white-100 text-[14px] pl-1 tracking-wider'>
-                1 Queen Bed
-              </li> 
-              <li className='text-white-100 text-[14px] pl-1 tracking-wider'>
-                1 Sofa Bed
-              </li>
-              <li className='text-white-100 text-[14px] pl-1 tracking-wider'>
-                1 Bathroom
-              </li>
-            </ul>
+        <StarsCanvas />
+        <div onClick={gotonext}>
+          <img src={leftArrow} style={{height:"3rem", width:"3rem", marginTop:"5rem",top: "50%",
+                 position: "absolute",top: "50%",transform: "translate(0, -50%)",left: "32px",fontSize: "45px",zIndex: 1, cursor: "pointer",}}/>
+        </div>
+        <div onClick={gotoprev}>
+          <img src={rightArrow} style={{height:"3rem", width:"3rem", marginTop:"5rem",top: "50%",
+                        position: "absolute",top: "50%",transform: "translate(0, -50%)",right: "32px",fontSize: "45px",color: "#fff",zIndex: 1,cursor: "pointer",}}/>
         </div>
 
+        <div>
+        {/* {StayTypes.map((data, index) => ( 
+          <div key={index} className=" bg-tertiary rounded-[20px] py-2 px-2 min-h-[280px] flex flex-auto justify-evenly items-center ">
+            <div >
+              <img src={data.image} style={{height:"20rem", width:"20rem" ,left:"rem" , marginTop:"30px"}}/>
+            </div>
+              <h1 className={`${styles.sectionSubHeadText} text-center`}>
+                {data.title}
+              </h1>
+              <p className={`${styles.sectionSubText} text-center`}>
+                {data.points}
+              </p>
+          </div>
+        ))} */}
 
-        <div className="glamp">
-          <img src={glamp} style={{height:"30rem", width:"30rem",marginTop:"5rem"}}/>
-            <h2 className="text-4xl text-center text-white mt-5">Glamping Nest</h2>
+          {carousel(StayTypes[currentIndex])}
         </div>
-       </div>
      </div>
-      {/* <div className='mt-20 flex flex-col'>
-        <VerticalTimeline>
-          {experiences.map((experience, index) => (
-            <ExperienceCard
-              key={`experience-${index}`}
-              experience={experience}
-            />
-          ))}
-        </VerticalTimeline>
-      </div> */}
-
-
-    
     </>
   );
 };

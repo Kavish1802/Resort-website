@@ -33,7 +33,7 @@ const Contact = () => {
     e.preventDefault();
     const { name, contact,cottage,starttDate,enddDate,glamp } = form;
     const message = `Hi, I'm ${name} and I wanted to book a ${cottage?"cottage":" "} ${glamp?"glamping nest":""}. From the date ${starttDate} to ${enddDate}. Please contact me at ${contact}`;
-    const url = `https://api.whatsapp.com/send?phone=+919713877798&text=${message}`;
+    const url = `https://api.whatsapp.com/send?phone=+918889918884x&text=${message}`;
     window.open(url, "_blank");
   };
 
@@ -46,6 +46,8 @@ const Contact = () => {
         className='flex-[0.75] bg-black-100 p-8 rounded-2xl'
       >
         <p className={styles.sectionSubText}>Chat on WhatsApp for Bookings</p>
+        <p style={{color:"red"}}> If you are veiwing this site on Desktop ,</p>
+         <p style={{color:"red"}}>then make sure you have whatsapp web or app</p>
         <h3 className={styles.sectionSubHeadText}>Contact for Bookings</h3>
 
         <form
