@@ -8,8 +8,9 @@ import { fadeIn, textVariant } from "../utils/motion";
 // import {Carousel} from "./Carousel.jsx";
 const ServiceCard = ({ index, title, image }) => (
   <Tilt className='xs:w-[250px] w-full'>
-    <motion.div
-      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+  <div>
+    <div
+      // variants={fadeIn("right", "spring", index * 0.5, 0.75)}
       className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
     >
       <div
@@ -31,7 +32,8 @@ const ServiceCard = ({ index, title, image }) => (
           {title}
         </h3>
       </div>
-    </motion.div>
+    </div>
+    </div>
   </Tilt>
 );
 

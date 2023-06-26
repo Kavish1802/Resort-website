@@ -1,15 +1,16 @@
 import { motion } from "framer-motion";
 import videobg from "../assets/video.mp4";
 import { styles } from "../styles";
+import { StarsCanvas } from "./canvas";
 
 const Hero = () => {
   return (
     <section className={`relative w-full h-screen mx-auto`}>
-    <video autoPlay loop muted playsInline style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', minWidth: '100%', minHeight: '10%' }}>
+    {/* <video autoPlay loop muted playsInline style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', minWidth: '100%', minHeight: '20%' }}>
       <source src={videobg} type="video/mp4" />
-    </video>
+    </video> */}
 
-
+      <StarsCanvas />
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
       >
