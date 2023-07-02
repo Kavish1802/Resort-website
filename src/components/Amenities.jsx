@@ -72,7 +72,7 @@ const Amenities = () => {
     <>
       <motion.div variants={textVariant()}>
         <p className={`${styles.sectionSubText} `}></p>
-        <h2 className={`${styles.sectionHeadText}`}>Our services</h2>
+        <h2 className={`${styles.sectionHeadText}`}>Restraunt</h2>
       </motion.div>
 
       <div className='w-full flex'>

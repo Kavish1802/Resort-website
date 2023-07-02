@@ -8,7 +8,7 @@ import Amenities from "./Amenities";
 import Feedbacks from "./Feedbacks";
 import Contact from "./Contact";
 import CanvasLoader from "./Loader";
-
+import Footer from "./Footer";
 
 export {
   Hero,
@@ -19,6 +19,7 @@ export {
   Amenities,
   Feedbacks,
   Contact,
+  Footer,
   CanvasLoader,
   EarthCanvas, 
   BallCanvas, 

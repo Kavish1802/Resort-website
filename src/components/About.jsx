@@ -5,7 +5,7 @@ import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
-// import {Carousel} from "./Carousel.jsx";
+import AliceCarousel from "react-alice-carousel";
 const ServiceCard = ({ index, title, image }) => (
   <Tilt className='xs:w-[250px] w-full'>
   <div>
@@ -54,12 +54,15 @@ const About = () => {
        from Indore , enjoy a scenic drive on the meardering road throught the 
        dense jungles of choral .
       </motion.p>
-
+      
       <div className='mt-20 flex flex-wrap gap-10'>
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
+      
+       {/* Open the modal using ID.showModal() method */}
+       
     </>
   );
 };
