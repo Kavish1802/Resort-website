@@ -1,41 +1,70 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import Logo from "../assets/WhatsAppLogo.png"
-import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css"
 import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-
+import axios from "axios";
 
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
     name: "",
+    startdate:new Date(),
+    enddate:new Date(),
     cottage:false,
-    starttDate:new Date(),
-    enddDate:new Date(),
     glamp:false,
     contact:"",
   });
+
   const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
+    const { name, value } = e.target;
     setForm({
       ...form,
       [name]: value,
     });
   };
 
-  const handleSubmit = (e) => {
-    //send message on whatsapp
+  // const handleChange = (e) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prevData) => ({ ...prevData, [name]: value }));
+  // };
+  
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const { name, contact,cottage,starttDate,enddDate,glamp } = form;
-    const message = `Hi, I'm ${name} and I wanted to book a ${cottage?"cottage":" "} ${glamp?"glamping nest":""}. From the date ${starttDate} to ${enddDate}. Please contact me at ${contact}`;
-    const url = `https://api.whatsapp.com/send?phone=+918889918884x&text=${message}`;
-    window.open(url, "_blank");
+    try {
+      console.log('Form submission started.');
+      console.log(form);
+      const response =await axios.post('http://localhost:5000/api/users',form);
+      console.log('Response:', response.data);
+      console.log('Form submitted and data stored in the database');
+
+      const { name, contact,cottage,startdate,enddate,glamp } = form;
+      const message = `Hi, I'm ${name} and I wanted to book a ${cottage?"cottage":" "} ${glamp?"glamping nest":""}. From the date ${startdate} to ${enddate}. Please contact me at ${contact}`;
+      const url = `https://api.whatsapp.com/send?phone=+918889918884x&text=${message}`;
+      window.open(url, "_blank");
+    } catch (error) {
+      console.error('Error storing data:', error.message);
+    }
   };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   const { name, contact,cottage,starttDate,enddDate,glamp } = form;
+  //   const message = `Hi, I'm ${name} and I wanted to book a ${cottage?"cottage":" "} ${glamp?"glamping nest":""}. From the date ${starttDate} to ${enddDate}. Please contact me at ${contact}`;
+  //   const url = `https://api.whatsapp.com/send?phone=+918889918884x&text=${message}`;
+  //   window.open(url, "_blank");
+  // };
+  const openLoaction = () => {
+     const url="https://goo.gl/maps/kGTy4HzkHdWcqbZz6";
+     const response = confirm("Do you want to open the location in google maps?");
+     if(response){
+      window.open(url,"_blank");
+     }
+     else return;
+  }
 
   return (
     <div
@@ -62,7 +91,7 @@ const Contact = () => {
               name='name'
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your good name?"
+              placeholder="What's your name?"
               className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium'
             />
           </label>
@@ -110,20 +139,20 @@ const Contact = () => {
          </label>
 
           <label className='flex flex-col'>
-             <span className='text-white font-medium mb-4'>Select Date with another method</span>
+             <span className='text-white font-medium mb-4'>Select Date </span>
               <div className="flex flex-row gap-4">
                 <input
                   type='date'
-                  name='starttDate'
-                  value={form.starttDate}
+                  name='startdate'
+                  value={form.startdate}
                   onChange={handleChange}
                   placeholder="Start Date"
                   className='bg-tertiary py-4 px-5 placeholder:text-secondary text-white rounded-lg outline-none border-none '
                 />
                 <input
                   type='date'
-                  name='enddDate'
-                  value={form.enddDate}
+                  name='enddate'
+                  value={form.enddate}
                   onChange={handleChange}
                   placeholder="End Date"
                   className='bg-tertiary py-4 px-5 placeholder:text-secondary text-white rounded-lg outline-none border-none'
@@ -141,11 +170,12 @@ const Contact = () => {
         </form>
       </motion.div>
 
-      <motion.div
+      <motion.div 
+        onClick={openLoaction}
         variants={slideIn("right", "tween", 0.2, 1)}
         className='xl:flex-1 xl:h-auto md:h-[550px] h-[350px]'
-      >
-        <EarthCanvas />
+      >    
+          <EarthCanvas  />
       </motion.div>
     </div>
   );

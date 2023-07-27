@@ -2,6 +2,11 @@ import { motion } from "framer-motion";
 import videobg from "../assets/video.mp4";
 import { styles } from "../styles";
 import { StarsCanvas } from "./canvas";
+import bgimage from "../assets/bgimage.jpg";
+import insta from "../assets/instagram.png";
+import  HeroStyles  from "./Hero.css";
+import Socials from "./Socials";
+
 
 const Hero = () => {
   return (
@@ -9,7 +14,7 @@ const Hero = () => {
     {/* <video autoPlay loop muted playsInline style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', minWidth: '100%', minHeight: '20%' }}>
       <source src={videobg} type="video/mp4" />
     </video> */}
-
+    {/* <img src={bgimage} alt='bgimage' className='w-full h-full object-cover z=-1' /> */}
       <StarsCanvas />
       <div
         className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
@@ -21,11 +26,13 @@ const Hero = () => {
 
         <div>
           <h1 className={`${styles.heroText} text-white`}>
-          <span className='text-[#964B00]'>The Glamping Groove</span>
+          <span className='text-[#964B00]'>The Glamping Grove</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            Groove in the wild
+            Grove in the wild
           </p>
+     
+              
         </div>
       </div>
     </section>

@@ -1,24 +1,10 @@
 import {
-  javascript,
-  typescript,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
   carrent,
   jobit,
-  tripguide,
-  threejs,
 } from "../assets";
+import River1 from "../assets/River1.jpg";
+import River2 from "../assets/River2.jpg";
+import River3 from "../assets/River3.jpg";
 import trust from "../assets/tech/trust.png";
 import camp  from "../assets/tech/camp.png";
 import resort from "../assets/tech/resort.png";
@@ -32,6 +18,7 @@ import trekking from "../assets/trekking.png";
 import Icon from "../assets/company/Icon.png";
 import cabbana from "../assets/cabbana.png";
 import stingray from "../assets/stingraystacks.png";
+import Insta from '../assets/instagram.png'
 console.log(campfiremusic);
 
 export const navLinks = [
@@ -47,6 +34,9 @@ export const navLinks = [
     id: "contact",
     title: "Contact",
   },
+  {
+    id:"Instagram"
+  }
 ];
 const services = [
   {
@@ -64,6 +54,18 @@ const services = [
   {
     title: "Campfire & Music",
     image: campfiremusic,
+  },
+  {
+    title: "River Side",
+    image: River1,
+  },
+  {
+    title: "Bathing",
+    image: River2,
+  },
+  {
+    title: "Wildlife",
+    image: River3,
   },
 ];
 
