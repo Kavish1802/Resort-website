@@ -1,4 +1,4 @@
-import River1 from "../assets/River1.jpg";
+// import River1 from "../assets/River1.jpg";
 import River2 from "../assets/River2.jpg";
 import River3 from "../assets/River3.jpg";
 import trust from "../assets/tech/trust.png";
@@ -50,10 +50,10 @@ const services = [
     title: "Campfire & Music",
     image: campfiremusic,
   },
-  {
-    title: "River Side",
-    image: River1,
-  },
+  // {
+  //   title: "River Side",
+  //   image: River1,
+  // },
   {
     title: "Bathing",
     image: River2,
