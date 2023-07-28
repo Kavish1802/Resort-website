@@ -45,7 +45,8 @@ const FeedbackCard = ({
 
 const Feedbacks = () => {
   return (
-    <div className={`mt-12 bg-black-100 rounded-[20px]`}>
+    // <div style={{backgroundImage: "linear-gradient(to top, #7028e4 0%, #e5b2ca 100%)"}}>
+      <div className={`mt-12 bg-black-100 rounded-[20px]`}>
       <div
         className={`bg-tertiary rounded-2xl ${styles.padding} min-h-[300px]`}
       >
@@ -60,6 +61,7 @@ const Feedbacks = () => {
         ))}
       </div>
     </div>
+    // </div>
   );
 };
 

@@ -1,24 +1,6 @@
-import {
-  javascript,
-  typescript,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
-} from "../assets";
+import River1 from "../assets/River1.jpg";
+import River2 from "../assets/River2.jpg";
+import River3 from "../assets/River3.jpg";
 import trust from "../assets/tech/trust.png";
 import camp  from "../assets/tech/camp.png";
 import resort from "../assets/tech/resort.png";
@@ -29,9 +11,9 @@ import campfiremusic from "../assets/campfriemusic.png";
 import archery from "../assets/archery.png";
 import food from "../assets/food.png";
 import trekking from "../assets/trekking.png";
-import Icon from "../assets/company/Icon.png";
 import cabbana from "../assets/cabbana.png";
 import stingray from "../assets/stingraystacks.png";
+import Insta from '../assets/instagram.png'
 console.log(campfiremusic);
 
 export const navLinks = [
@@ -47,6 +29,9 @@ export const navLinks = [
     id: "contact",
     title: "Contact",
   },
+  {
+    id:"Instagram"
+  }
 ];
 const services = [
   {
@@ -64,6 +49,18 @@ const services = [
   {
     title: "Campfire & Music",
     image: campfiremusic,
+  },
+  {
+    title: "River Side",
+    image: River1,
+  },
+  {
+    title: "Bathing",
+    image: River2,
+  },
+  {
+    title: "Wildlife",
+    image: River3,
   },
 ];
 
@@ -148,49 +145,5 @@ const testimonials = [
   },
 ];
 
-const projects = [
-  {
-    name: "Car Rent",
-    description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Job IT",
-    description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-];
 
-export { services, technologies, StayTypes, testimonials, projects };
+export { services, technologies, StayTypes, testimonials};
