@@ -25,6 +25,8 @@ const Contact = () => {
       ...form,
       [name]: value,
     });
+    console.log(name,value);
+    
   };
 
   // const handleChange = (e) => {
@@ -116,7 +118,7 @@ const Contact = () => {
                 type='checkbox'
                 name='cottage'
                 value={form.cottage}
-                onChange={handleChange}
+                onChange={()=>{setForm({...form,glamp:!form.cottage})}}
                 className='h-6 w-6 rounded-lg border-none outline-none'
               />
               <span className='text-white font-medium'>
@@ -129,7 +131,7 @@ const Contact = () => {
                 type='checkbox'
                 name='glamp'
                 value={form.glamp}
-                onChange={handleChange}
+                onChange={()=>{setForm({...form,glamp:!form.glamp})}}
                 className='h-6 w-6 rounded-lg border-none outline-none'
               />
               <span className='text-white font-medium'>
