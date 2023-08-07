@@ -4,7 +4,6 @@ import { styles } from "../styles";
 import { StarsCanvas } from "./canvas";
 import bgimage from "../assets/bgimage.jpg";
 import insta from "../assets/instagram.png";
-import  HeroStyles  from "./Hero.css";
 import Socials from "./Socials";
 
 
@@ -40,3 +39,9 @@ const Hero = () => {
 };
 
 export default Hero;
+// {technologies.map((technology) => (
+//   <div className="Seperator" key={technology.name}>
+//     <img src={technology.icon} style={{width:"6rem",height:"6rem"}}/>
+//     <p className="text-white ml-5rem flex">{technology.desc} hfb,ksbadjkfn kfjkjsdb adjenskdfjj </p>
+//   </div>
+// ))}

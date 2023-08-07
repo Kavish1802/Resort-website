@@ -5,6 +5,7 @@ import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 
 const Tech = () => {
+
   return (
     <div className='flex flex-row flex-wrap justify-center gap-14'>
       {technologies.map((technology) => (
@@ -12,6 +13,7 @@ const Tech = () => {
           <BallCanvas icon={technology.icon} />
         </div>
       ))}
+
     </div>
   );
 };

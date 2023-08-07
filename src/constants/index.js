@@ -1,6 +1,6 @@
 // import River1 from "../assets/River1.jpg";
-import River2 from "../assets/River2.jpg";
-import River3 from "../assets/River3.jpg";
+// import River2 from "../assets/River2.jpg";
+// import River3 from "../assets/River3.jpg";
 import trust from "../assets/tech/trust.png";
 import camp  from "../assets/tech/camp.png";
 import resort from "../assets/tech/resort.png";
@@ -54,47 +54,47 @@ const services = [
   //   title: "River Side",
   //   image: River1,
   // },
-  {
-    title: "Bathing",
-    image: River2,
-  },
-  {
-    title: "Wildlife",
-    image: River3,
-  },
+  // {
+  //   title: "Bathing",
+  //   image: River2,
+  // },
+  // {
+  //   title: "Wildlife",
+  //   image: River3,
+  // },
 ];
 
 const technologies = [
   {
-    name: "html",
+    name: "trust",
     icon: trust,
     desc:"Trust"
   },
   {
-    name: "CSS 3",
+    name: "camp",
     icon: camp,
     desc:"Camping"
   },
-  {
-    name: "JavaScript",
-    icon: resort,
-    desc:"Resort"
-  },
+  // {
+  //   name: "resort",
+  //   icon: resort,
+  //   desc:"Resort"
+  // },
   {
     name: "TypeScript",
     icon: safety,
     desc:"Safety"
   },
   {
-    name: "React JS",
+    name: "verified",
     icon: verified,
     desc:"Verified"
   },
-  {
-    name: "Redux Toolkit",
-    icon: riverside,
-    desc:"Riverside"
-  },
+  // {
+  //   name: "riverside",
+  //   icon: riverside,
+  //   desc:"Beautiful Riverside Resort"
+  // },
 ];
 
 const StayTypes = [

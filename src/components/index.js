@@ -10,6 +10,7 @@ import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import Footer from "./Footer";
 import Socials from "./Socials";
+import Techcss from "./Tech.css";
 
 export {
   Hero,
@@ -26,4 +27,5 @@ export {
   BallCanvas, 
   StarsCanvas,
   Socials,
+  Techcss
 };

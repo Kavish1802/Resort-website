@@ -5,7 +5,7 @@ import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
-import axios from "axios";
+import axios from 'axios';
 
 const Contact = () => {
   const formRef = useRef();
@@ -38,7 +38,7 @@ const Contact = () => {
     try {
       console.log('Form submission started.');
       console.log(form);
-      const response =await axios.post('http://localhost:5000/api/users',form);
+      const response =await axios.post('https://perfect-parka-ant.cyclic.app/api/users',form);
       console.log('Response:', response.data);
       console.log('Form submitted and data stored in the database');
 
