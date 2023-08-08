@@ -1,6 +1,7 @@
 // import River1 from "../assets/River1.jpg";
 // import River2 from "../assets/River2.jpg";
 // import River3 from "../assets/River3.jpg";
+import Cottage from "../assets/cottage.jpg";
 import trust from "../assets/tech/trust.png";
 import camp  from "../assets/tech/camp.png";
 import resort from "../assets/tech/resort.png";
@@ -101,7 +102,7 @@ const StayTypes = [
   {
     title: "Cabbana Cottages",
     iconBg: "#383E56",
-    image:cabbana,
+    image:Cottage,
     date: "March 2020 - April 2021",
     points: [
       "1-2 lines decription here"

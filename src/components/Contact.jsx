@@ -50,7 +50,6 @@ const Contact = () => {
       console.error('Error storing data:', error.message);
     }
   };
-
   // const handleSubmit = (e) => {
   //   e.preventDefault();
   //   const { name, contact,cottage,starttDate,enddDate,glamp } = form;
