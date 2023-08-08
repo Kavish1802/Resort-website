@@ -47,7 +47,7 @@ const Experience = () => {
  <a href="#!">
   <img
    className="rounded-t-lg"
-   src={StayTypes[0].image}
+   src={StayTypes[1].image}
    alt="" />
 </a>
 <div className="p-6">

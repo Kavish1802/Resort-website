@@ -2,6 +2,7 @@
 // import River2 from "../assets/River2.jpg";
 // import River3 from "../assets/River3.jpg";
 import Cottage from "../assets/cottage.jpg";
+import Glamping from "../assets/glamping.jpg";
 import trust from "../assets/tech/trust.png";
 import camp  from "../assets/tech/camp.png";
 import resort from "../assets/tech/resort.png";
@@ -110,7 +111,7 @@ const StayTypes = [
   },
   {
     title: "Glamping Nests",
-    image:stingray,
+    image:Glamping,
     iconBg:  "#383E56",
     points: [
      "1-2 lines decription here"
