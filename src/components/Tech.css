@@ -20,7 +20,8 @@
     .SeperatorWrapper{
         grid-template-columns: repeat(1, 1fr); /* Four equal columns */
         grid: column;
-        height: 32rem;
+        height: 10rem;
+        width: 10rem;
     }
 }
 .Seperator{

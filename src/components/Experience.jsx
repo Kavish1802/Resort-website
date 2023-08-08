@@ -18,7 +18,7 @@ const Experience = () => {
   }
   const Slides = [
     <div className="flex flex-auto justify-center items-center mt-17 " >
-           <div style={{width:"40%",float: "left",marginRight: "30px"}} >
+           <div style={{width:"50%",float: "left",marginRight: "30px"}} >
             <img src={StayTypes[0].image} style={{width: "100%"}}/>
           </div>
           <div style={SkillRow}>
@@ -30,7 +30,6 @@ const Experience = () => {
             </p>
       
           </div>
-          
     </div>,
     <div className="flex flex-auto justify-center items-center mt-17 ">
           <div style={{width: "40%",float: "left",marginRight: "30px"}} >
