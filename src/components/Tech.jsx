@@ -21,7 +21,7 @@ const Tech = () => {
   );
 };
 
-export default SectionWrapper(Tech, "");
+export default Tech;
 
 // {technologies.map((technology) => (
 //   <div className="w-28 h-28" key={technology.name}>
